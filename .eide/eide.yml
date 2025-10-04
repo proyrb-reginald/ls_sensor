@@ -9,7 +9,8 @@ srcDirs:
   - Inc
 virtualFolder:
   name: <virtual_root>
-  files: []
+  files:
+    - path: startup_stm32h743xx.s
   folders: []
 dependenceList: []
 outDir: build
@@ -21,6 +22,7 @@ targets:
       defineList:
         - STM32H743xx
       incList:
+        - .
         - Drivers/CMSIS/Device/ST/STM32H7xx/Include
         - Drivers/CMSIS/Include
         - Drivers/STM32H7xx_HAL_Driver/Inc
@@ -77,6 +79,11 @@ targets:
         otherCmds: ""
         proType: 1
         speed: 8000
+      OpenOCD:
+        baseAddr: "0x08000000"
+        bin: ""
+        interface: cmsis-dap
+        target: stm32h7x_dual_bank
       STLink:
         address: "0x08000000"
         bin: ""
@@ -87,4 +94,4 @@ targets:
         resetMode: default
         runAfterProgram: true
         speed: 4000
-    uploader: STLink
+    uploader: OpenOCD
