@@ -66,7 +66,7 @@ void rt_hw_board_init(void)
      * Enable the hardware timer and call the rt_os_tick_callback function
      * periodically with the frequency RT_TICK_PER_SECOND.
      */
-    HAL_SYSTICK_Config(HAL_RCC_GetHCLKFreq() / RT_TICK_PER_SECOND);
+    HAL_SYSTICK_Config(HAL_RCC_GetSysClockFreq() / RT_TICK_PER_SECOND);
 
     /* Call components board initial (use INIT_BOARD_EXPORT()) */
 #ifdef RT_USING_COMPONENTS_INIT
@@ -81,6 +81,7 @@ void rt_hw_board_init(void)
 #ifdef RT_USING_CONSOLE
 
 INIT_BOARD_EXPORT(MX_GPIO_Init);
+INIT_BOARD_EXPORT(MX_USART1_UART_Init);
 
 void rt_hw_console_output(const char *str)
 {

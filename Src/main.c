@@ -98,7 +98,7 @@ int main(void)
     while (1) {
         rt_thread_mdelay(500);
         HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
-        rt_kprintf("Hello World!\n");
+        rt_kprintf("SysTick Clock Freq:%u\n", HAL_RCC_GetSysClockFreq());
         /* USER CODE END WHILE */
 
         /* USER CODE BEGIN 3 */

@@ -28,9 +28,8 @@ UART_HandleTypeDef huart1;
 
 /* USART1 init function */
 
-void MX_USART1_UART_Init(void)
+int MX_USART1_UART_Init(void)
 {
-
     /* USER CODE BEGIN USART1_Init 0 */
 
     /* USER CODE END USART1_Init 0 */
@@ -62,7 +61,7 @@ void MX_USART1_UART_Init(void)
         Error_Handler();
     }
     /* USER CODE BEGIN USART1_Init 2 */
-
+    return 0;
     /* USER CODE END USART1_Init 2 */
 }
 
